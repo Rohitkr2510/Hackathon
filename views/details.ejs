@@ -1,0 +1,34 @@
+<%- include("header") -%>
+<h1 class="box" id = "heading">Team Name - <%=team%></h1>
+<p>Team ID - <%=id%></p>
+<p>Project Name - <%=project%></p>
+<p>Descripton - <%=description%></p>
+
+<div>
+    <h3>Update The details the This Team</h3>
+  <form name = "form1" method = "POST" action = "/update_team">
+      <table>
+          <tr>
+              <td> Unique ID</td>
+              <td><input type = "text" name = "id"></td>
+          </tr>
+          <tr>
+              <td>Updated Team Name</td>
+              <td><input type = "text" name = "team_name"></td>
+          </tr>
+          <tr>
+              <td>Updated Project Name</td>
+              <td><input type = "text" name = "project_name"></td>
+          </tr>
+          <tr>
+              <td>Updated Descripton</td>
+              <td><input type = "text" name = "Description"></td>
+          </tr>
+          <tr>
+              <td colspan="2"><input type = "submit" value = "Add Team" ></td>
+          </tr>
+          
+      </table>
+  </form>
+  </div>
+<%- include("footer") -%>

@@ -1,0 +1,55 @@
+<%- include("header") -%>
+<div class="box" id="heading">
+  <h1>List of teams</h1>
+</div>
+<div class = "box" id = "heading">
+   <li>
+      Team Name
+      <em>(Project Name)</em>
+      <button class = "Button">Delete</button>
+    </li>
+</div>
+
+
+<ul>
+  <% for (const team of model) { %>
+  <div class="box" id="heading">
+    <li>
+      <%= team.team_name %>
+      <em>(<%= team.project_name %>)</em>
+      <a href = "/team/<%=team.id%>">Read More</a>
+      <a class= "Button" href = "/remove/<%=team.id%>">Delete</a>
+    </li>
+  </div>
+
+  <%}%>
+</ul>
+
+<div>
+  <h3>Add a New Hackathon Team</h3>
+<form name = "form1" method = "POST" action = "/insert_team">
+    <table>
+        <tr>
+            <td> Unique ID</td>
+            <td><input type = "text" name = "id"></td>
+        </tr>
+        <tr>
+            <td>Team Name</td>
+            <td><input type = "text" name = "team_name"></td>
+        </tr>
+        <tr>
+            <td>Project Name</td>
+            <td><input type = "text" name = "project_name"></td>
+        </tr>
+        <tr>
+            <td>Descripton</td>
+            <td><input type = "text" name = "Description"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type = "submit" value = "Add Team" ></td>
+        </tr>
+        
+    </table>
+</form>
+</div>
+<%- include("footer") -%>
